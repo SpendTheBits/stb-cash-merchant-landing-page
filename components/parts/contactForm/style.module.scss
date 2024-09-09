@@ -1,0 +1,33 @@
+@import "/styles/mixins";
+
+.formBlock {
+  form {
+    @include flexContainer($gap: 40px);
+    flex-direction: column;
+    > div {
+      width: 100%;
+      @include flexContainer;
+      > div {
+        width: 100%;
+      }
+      &:last-child {
+        text-align: center;
+        button {
+          width: 100%;
+          max-width: 250px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .formBlock {
+    form {
+      > div {
+        flex-direction: column;
+      }
+    }
+  }
+}
